@@ -409,6 +409,7 @@
 				E8D53B611B0B6CF400F0DCEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E8D53B621B0B6CF400F0DCEA /* Build configuration list for PBXNativeTarget "SmashTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +418,7 @@
 				E8D53B641B0B6CF400F0DCEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
