@@ -1,25 +1,54 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Smash" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="700" height="400"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LyQ-3T-Ghz">
+                                <rect key="frame" x="0.0" y="40" width="700" height="360"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TYd-fw-Ff3">
+                                <rect key="frame" x="0.0" y="0.0" width="700" height="40"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="mPY-qp-qd5"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LyQ-3T-Ghz" firstAttribute="top" secondItem="TYd-fw-Ff3" secondAttribute="bottom" id="6IT-k7-ZQj"/>
+                            <constraint firstAttribute="trailing" secondItem="LyQ-3T-Ghz" secondAttribute="trailing" id="9hg-1b-n5e"/>
+                            <constraint firstItem="LyQ-3T-Ghz" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="MAv-dg-Zjc"/>
+                            <constraint firstItem="TYd-fw-Ff3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="O0e-Og-0Ar"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="LyQ-3T-Ghz" secondAttribute="bottom" id="OKO-VK-RO2"/>
+                            <constraint firstItem="TYd-fw-Ff3" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="THr-GH-s0L"/>
+                            <constraint firstAttribute="trailing" secondItem="TYd-fw-Ff3" secondAttribute="trailing" id="ZYv-0z-Lil"/>
+                        </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="700" height="400"/>
+                    <connections>
+                        <outlet property="gameView" destination="LyQ-3T-Ghz" id="KyM-Do-hFK"/>
+                        <outlet property="headerView" destination="TYd-fw-Ff3" id="twR-4a-1Sa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="412" y="401"/>
         </scene>
     </scenes>
 </document>

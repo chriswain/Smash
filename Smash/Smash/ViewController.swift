@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController, UICollisionBehaviorDelegate {
     
+    @IBOutlet weak var gameView: UIView!
+   
+    @IBOutlet weak var headerView: UIView!
+    
     var animator: UIDynamicAnimator!
     var gravityBehavior = UIGravityBehavior()
     var collisionBehavior = UICollisionBehavior()
@@ -22,11 +26,12 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     
     var ball = UIView(frame: CGRectMake(20, 20, 20, 20))
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
+        view.setNeedsUpdateConstraints()
         
-        animator = UIDynamicAnimator(referenceView: view)
+        animator = UIDynamicAnimator(referenceView: gameView)
         
         animator.addBehavior(gravityBehavior)
         animator.addBehavior(collisionBehavior)
@@ -49,13 +54,15 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         
         
         
-        collisionBehavior.translatesReferenceBoundsIntoBoundary = true
+//        collisionBehavior.translatesReferenceBoundsIntoBoundary = true
         collisionBehavior.collisionDelegate = self
         
-        let pointTL = CGPointZero
-        let pointTR = CGPointMake(view.frame.width, 0)
-        let pointBL = CGPointMake(0, view.frame.height)
-        let pointBR = CGPointMake(view.frame.width, view.frame.height)
+        
+        
+        let pointTL = CGPointMake(0, 0)
+        let pointTR = CGPointMake(gameView.frame.width, 0)
+        let pointBL = CGPointMake(0, gameView.frame.height)
+        let pointBR = CGPointMake(gameView.frame.width, gameView.frame.height)
         collisionBehavior.addBoundaryWithIdentifier("floor", fromPoint: pointBL, toPoint: pointBR)
         collisionBehavior.addBoundaryWithIdentifier("right", fromPoint: pointTR, toPoint: pointBR)
         collisionBehavior.addBoundaryWithIdentifier("left", fromPoint: pointTL, toPoint: pointBL)
@@ -83,7 +90,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
                 var scoreLabel = UILabel(frame: brick.frame)
                 scoreLabel.text = "+100"
                 scoreLabel.textAlignment = .Center
-                view.addSubview(scoreLabel)
+                gameView.addSubview(scoreLabel)
                 
                 
                 
@@ -105,6 +112,15 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         
         if "floor" == identifier as! String {
             // remove ball
+            
+            if balls.count > 0 {
+                
+                collisionBehavior.removeItem(balls[0])
+                balls[0].removeFromSuperview()
+                balls.removeAtIndex(0)
+                
+                createBall()
+            }
         }
         
     }
@@ -135,9 +151,9 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     
     func createPaddle() {
         paddle.backgroundColor = UIColor.blackColor()
-        paddle.center = CGPointMake(view.center.x, view.frame.height - 40)
+        paddle.center = CGPointMake(gameView.center.x, gameView.frame.height - 40)
         
-        view.addSubview(paddle)
+        gameView.addSubview(paddle)
         
         collisionBehavior.addItem(paddle)
         paddleBehavior.addItem(paddle)
@@ -150,11 +166,11 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         
         var ball = UIView(frame: CGRectMake(20, 20, 20, 20))
         balls.append(ball)
-        ball.center = CGPointMake(view.center.x, view.frame.size.height - 100)
+        ball.center = CGPointMake(gameView.center.x, gameView.frame.size.height - 100)
     
         ball.backgroundColor = UIColor.blackColor()
         ball.layer.cornerRadius = 10
-        view.addSubview(ball)
+        gameView.addSubview(ball)
         
         ballBehavior.addItem(ball)
         collisionBehavior.addItem(ball)
@@ -177,7 +193,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
             
             for c in 0..<cols {
                 
-                let brickWidth = (view.frame.width - (padding * CGFloat(cols + 1))) / CGFloat(cols)
+                let brickWidth = (gameView.frame.width - (padding * CGFloat(cols + 1))) / CGFloat(cols)
                 let brickHeight: CGFloat = 30
                 
                 let brickX = (CGFloat(c) * (brickWidth + padding)) + padding
@@ -186,7 +202,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
                 var brick = UIView(frame: CGRectMake(brickX, brickY, brickWidth, brickHeight))
                 brick.backgroundColor = UIColor.blackColor()
         
-                view.addSubview(brick)
+                gameView.addSubview(brick)
                 bricks.append(brick)
         
                 brickBehavior.addItem(brick)
