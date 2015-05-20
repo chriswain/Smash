@@ -8,6 +8,9 @@
 
 import UIKit
 
+//var currentScore = 0
+//var currentLevel = 0
+
 class LevelViewController: UIViewController, UICollisionBehaviorDelegate {
     
     @IBOutlet weak var gameView: UIView!
@@ -139,7 +142,7 @@ class LevelViewController: UIViewController, UICollisionBehaviorDelegate {
                     gameView.addSubview(scoreLabel)
                     
                     currentScore += brick.points
-                    
+                    GameData.mainData().currentScore += brick.points
                     
                     
                     UIView.animateWithDuration(0.4, animations: { () -> Void in
@@ -151,15 +154,22 @@ class LevelViewController: UIViewController, UICollisionBehaviorDelegate {
                             
                     })
                     
+                    
+                    
                     if bricks.count == 0 {
                         // level beaten
                         
+                        GameData.mainData().currentLevel++
+                        
+                        if let doneVC = storyboard?.instantiateViewControllerWithIdentifier("doneVC") as? DoneViewController {
+                            navigationController?.viewControllers = [doneVC]
+                            
+                        }
                         
                         // move this to when you hit play next level
-                        GameData.mainData().currentLevel++
-                            if let doneVC = storyboard?.instantiateViewControllerWithIdentifier("DoneVC") as? LevelViewController {
-                            navigationController?.viewControllers = [doneVC]
-                        }
+                       // GameData.mainData().currentLevel++
+                        
+                        
                         
                     }
 
@@ -184,6 +194,7 @@ class LevelViewController: UIViewController, UICollisionBehaviorDelegate {
                 
                 if livesView.ballsLeft > 0 {
                 livesView.ballsLeft--
+                GameData.mainData().ballsRemain = livesView.ballsLeft
                 createBall()
                 }
                 

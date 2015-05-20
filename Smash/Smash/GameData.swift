@@ -17,11 +17,13 @@ class GameData: NSObject {
     var currentLevel = 0
     var currentLives = 0
     var currentScore = 0
+    var ballsRemain = 0
     
     var levels: [[[Int]]] = [
     [
-        [2,3,2],
-        [1,2,0,2,1],
+        [1, 1, 1]
+//        [2,3,2],
+//        [1,2,0,2,1],
         
     ],
     [
