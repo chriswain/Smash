@@ -13,6 +13,10 @@ private let _data = GameData()
 class GameData: NSObject {
     
     class func mainData() -> GameData { return _data }
+   
+    var currentLevel = 0
+    var currentLives = 0
+    var currentScore = 0
     
     var levels: [[[Int]]] = [
     [
@@ -28,5 +32,16 @@ class GameData: NSObject {
     
     
     ]
+    
+    var playerInfo: [String:AnyObject] = [
+        
+        "ballslost" : 0,
+        "levelsBeat" : 0,
+        "topScore" : 0
+    ]
    
+    func getCurrentLevelBricks() -> [[Int]] {
+        
+        return levels[currentLevel]
+    }
 }

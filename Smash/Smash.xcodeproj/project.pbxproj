@@ -13,11 +13,14 @@
 		E85F743A1B0BBF0100F001F0 /* BrickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85F74391B0BBF0100F001F0 /* BrickView.swift */; };
 		E85F743C1B0BBF1100F001F0 /* PaddleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85F743B1B0BBF1100F001F0 /* PaddleView.swift */; };
 		E8D53B461B0B6CF400F0DCEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D53B451B0B6CF400F0DCEA /* AppDelegate.swift */; };
-		E8D53B481B0B6CF400F0DCEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D53B471B0B6CF400F0DCEA /* ViewController.swift */; };
+		E8D53B481B0B6CF400F0DCEA /* LevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D53B471B0B6CF400F0DCEA /* LevelViewController.swift */; };
 		E8D53B4B1B0B6CF400F0DCEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8D53B491B0B6CF400F0DCEA /* Main.storyboard */; };
 		E8D53B4D1B0B6CF400F0DCEA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8D53B4C1B0B6CF400F0DCEA /* Images.xcassets */; };
 		E8D53B501B0B6CF400F0DCEA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8D53B4E1B0B6CF400F0DCEA /* LaunchScreen.xib */; };
 		E8D53B5C1B0B6CF400F0DCEA /* SmashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D53B5B1B0B6CF400F0DCEA /* SmashTests.swift */; };
+		E8E9A5831B0CE05D00B488AE /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E9A5821B0CE05D00B488AE /* StartViewController.swift */; };
+		E8E9A5851B0CE06F00B488AE /* DoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E9A5841B0CE06F00B488AE /* DoneViewController.swift */; };
+		E8E9A5891B0D07C400B488AE /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E9A5881B0D07C400B488AE /* GameOverViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,13 +42,16 @@
 		E8D53B401B0B6CF400F0DCEA /* Smash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8D53B441B0B6CF400F0DCEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8D53B451B0B6CF400F0DCEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E8D53B471B0B6CF400F0DCEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E8D53B471B0B6CF400F0DCEA /* LevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewController.swift; sourceTree = "<group>"; };
 		E8D53B4A1B0B6CF400F0DCEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E8D53B4C1B0B6CF400F0DCEA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E8D53B4F1B0B6CF400F0DCEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E8D53B551B0B6CF400F0DCEA /* SmashTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmashTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8D53B5A1B0B6CF400F0DCEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8D53B5B1B0B6CF400F0DCEA /* SmashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmashTests.swift; sourceTree = "<group>"; };
+		E8E9A5821B0CE05D00B488AE /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		E8E9A5841B0CE06F00B488AE /* DoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneViewController.swift; sourceTree = "<group>"; };
+		E8E9A5881B0D07C400B488AE /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,15 +93,12 @@
 		E8D53B421B0B6CF400F0DCEA /* Smash */ = {
 			isa = PBXGroup;
 			children = (
-				E8D53B451B0B6CF400F0DCEA /* AppDelegate.swift */,
-				E8D53B471B0B6CF400F0DCEA /* ViewController.swift */,
+				E8E9A5821B0CE05D00B488AE /* StartViewController.swift */,
+				E8E9A5841B0CE06F00B488AE /* DoneViewController.swift */,
+				E8E9A5881B0D07C400B488AE /* GameOverViewController.swift */,
 				E8D53B491B0B6CF400F0DCEA /* Main.storyboard */,
-				E85F74351B0BBED700F001F0 /* BallCountView.swift */,
-				E85F74371B0BBEEC00F001F0 /* BallView.swift */,
-				E85F74391B0BBF0100F001F0 /* BrickView.swift */,
-				E85F743B1B0BBF1100F001F0 /* PaddleView.swift */,
+				E8E9A5861B0CE09500B488AE /* Model */,
 				E8D53B431B0B6CF400F0DCEA /* Supporting Files */,
-				E84389391B0CCF4900D25775 /* GameData.swift */,
 			);
 			path = Smash;
 			sourceTree = "<group>";
@@ -105,6 +108,7 @@
 			children = (
 				E8D53B4C1B0B6CF400F0DCEA /* Images.xcassets */,
 				E8D53B4E1B0B6CF400F0DCEA /* LaunchScreen.xib */,
+				E8D53B451B0B6CF400F0DCEA /* AppDelegate.swift */,
 				E8D53B441B0B6CF400F0DCEA /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -125,6 +129,27 @@
 				E8D53B5A1B0B6CF400F0DCEA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E8E9A5861B0CE09500B488AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E84389391B0CCF4900D25775 /* GameData.swift */,
+				E8E9A5871B0CE0B300B488AE /* Level */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E8E9A5871B0CE0B300B488AE /* Level */ = {
+			isa = PBXGroup;
+			children = (
+				E85F74371B0BBEEC00F001F0 /* BallView.swift */,
+				E85F74351B0BBED700F001F0 /* BallCountView.swift */,
+				E85F74391B0BBF0100F001F0 /* BrickView.swift */,
+				E85F743B1B0BBF1100F001F0 /* PaddleView.swift */,
+				E8D53B471B0B6CF400F0DCEA /* LevelViewController.swift */,
+			);
+			name = Level;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,12 +252,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8D53B481B0B6CF400F0DCEA /* ViewController.swift in Sources */,
+				E8D53B481B0B6CF400F0DCEA /* LevelViewController.swift in Sources */,
+				E8E9A5831B0CE05D00B488AE /* StartViewController.swift in Sources */,
 				E85F74361B0BBED700F001F0 /* BallCountView.swift in Sources */,
 				E85F743A1B0BBF0100F001F0 /* BrickView.swift in Sources */,
+				E8E9A5891B0D07C400B488AE /* GameOverViewController.swift in Sources */,
 				E8D53B461B0B6CF400F0DCEA /* AppDelegate.swift in Sources */,
 				E843893A1B0CCF4900D25775 /* GameData.swift in Sources */,
 				E85F743C1B0BBF1100F001F0 /* PaddleView.swift in Sources */,
+				E8E9A5851B0CE06F00B488AE /* DoneViewController.swift in Sources */,
 				E85F74381B0BBEEC00F001F0 /* BallView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
