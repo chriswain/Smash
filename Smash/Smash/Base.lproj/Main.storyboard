@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="40" width="700" height="360"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TYd-fw-Ff3">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TYd-fw-Ff3" customClass="BallCountView" customModule="Smash" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="700" height="40"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>

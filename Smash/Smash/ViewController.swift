@@ -54,7 +54,7 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         
         
         
-//        collisionBehavior.translatesReferenceBoundsIntoBoundary = true
+//      collisionBehavior.translatesReferenceBoundsIntoBoundary = true
         collisionBehavior.collisionDelegate = self
         
         
