@@ -8,17 +8,17 @@
 
 import UIKit
 
-class BallCountView: UIView {
-
-    var ballsLeft = 3 {
+@IBDesignable class BallCountView: UIView {
+    
+    @IBInspectable var ballsLeft: Int = 3 {
        
-        didset {
+        didSet {
             
             setNeedsDisplay()
         }
     }
     
-    
+    @IBInspectable var padding: CGFloat = 10
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -27,12 +27,17 @@ class BallCountView: UIView {
         
         var context = UIGraphicsGetCurrentContext()
         
- //       let height =
+        let height = rect.height
+        let width = rect.height
         
- //       for i in 0..<ballsLeft {
+        for i in 0..<ballsLeft {
+            let x = CGFloat(i) * (width + padding)
+            let y: CGFloat = 0
+            
+            CGContextFillEllipseInRect(context, CGRectMake(x, y, width, height))
             
         }
     }
-    
+}
 
 

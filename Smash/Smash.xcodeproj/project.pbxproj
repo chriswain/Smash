@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E843893A1B0CCF4900D25775 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84389391B0CCF4900D25775 /* GameData.swift */; };
 		E85F74361B0BBED700F001F0 /* BallCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85F74351B0BBED700F001F0 /* BallCountView.swift */; };
 		E85F74381B0BBEEC00F001F0 /* BallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85F74371B0BBEEC00F001F0 /* BallView.swift */; };
 		E85F743A1B0BBF0100F001F0 /* BrickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85F74391B0BBF0100F001F0 /* BrickView.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E84389391B0CCF4900D25775 /* GameData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		E85F74351B0BBED700F001F0 /* BallCountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallCountView.swift; sourceTree = "<group>"; };
 		E85F74371B0BBEEC00F001F0 /* BallView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallView.swift; sourceTree = "<group>"; };
 		E85F74391B0BBF0100F001F0 /* BrickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrickView.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				E85F74391B0BBF0100F001F0 /* BrickView.swift */,
 				E85F743B1B0BBF1100F001F0 /* PaddleView.swift */,
 				E8D53B431B0B6CF400F0DCEA /* Supporting Files */,
+				E84389391B0CCF4900D25775 /* GameData.swift */,
 			);
 			path = Smash;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				E85F74361B0BBED700F001F0 /* BallCountView.swift in Sources */,
 				E85F743A1B0BBF0100F001F0 /* BrickView.swift in Sources */,
 				E8D53B461B0B6CF400F0DCEA /* AppDelegate.swift in Sources */,
+				E843893A1B0CCF4900D25775 /* GameData.swift in Sources */,
 				E85F743C1B0BBF1100F001F0 /* PaddleView.swift in Sources */,
 				E85F74381B0BBEEC00F001F0 /* BallView.swift in Sources */,
 			);

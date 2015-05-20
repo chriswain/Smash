@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -22,9 +23,41 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TYd-fw-Ff3">
                                 <rect key="frame" x="0.0" y="0.0" width="700" height="40"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z7K-nx-Ck4" customClass="BallCountView" customModule="Smash" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="10" width="186" height="20"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="score:0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M64-3H-Vhy">
+                                        <rect key="frame" x="532" y="10" width="160" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="FZ3-Nw-uxa"/>
+                                            <constraint firstAttribute="width" constant="160" id="rdc-6H-q61"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESF-RA-4wZ">
+                                        <rect key="frame" x="270" y="10" width="160" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="Let-dN-34f"/>
+                                            <constraint firstAttribute="height" constant="21" id="kvo-gE-veb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="9sA-B1-BN7"/>
+                                    <constraint firstAttribute="centerX" secondItem="ESF-RA-4wZ" secondAttribute="centerX" id="LaW-BP-p3c"/>
+                                    <constraint firstAttribute="width" constant="700" id="Uv2-Le-dcS"/>
+                                    <constraint firstItem="M64-3H-Vhy" firstAttribute="top" secondItem="TYd-fw-Ff3" secondAttribute="top" constant="10" id="VPQ-Bl-o1f"/>
+                                    <constraint firstItem="ESF-RA-4wZ" firstAttribute="top" secondItem="TYd-fw-Ff3" secondAttribute="top" constant="10" id="fOo-XK-KoE"/>
                                     <constraint firstAttribute="height" constant="40" id="mPY-qp-qd5"/>
+                                    <constraint firstAttribute="trailing" secondItem="M64-3H-Vhy" secondAttribute="trailing" constant="20" id="yXb-Dz-beJ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -32,18 +65,23 @@
                         <constraints>
                             <constraint firstItem="LyQ-3T-Ghz" firstAttribute="top" secondItem="TYd-fw-Ff3" secondAttribute="bottom" id="6IT-k7-ZQj"/>
                             <constraint firstAttribute="trailing" secondItem="LyQ-3T-Ghz" secondAttribute="trailing" id="9hg-1b-n5e"/>
+                            <constraint firstItem="TYd-fw-Ff3" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="12" id="Jid-g3-OnQ"/>
                             <constraint firstItem="LyQ-3T-Ghz" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="MAv-dg-Zjc"/>
                             <constraint firstItem="TYd-fw-Ff3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="O0e-Og-0Ar"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="LyQ-3T-Ghz" secondAttribute="bottom" id="OKO-VK-RO2"/>
                             <constraint firstItem="TYd-fw-Ff3" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="THr-GH-s0L"/>
                             <constraint firstAttribute="trailing" secondItem="TYd-fw-Ff3" secondAttribute="trailing" id="ZYv-0z-Lil"/>
+                            <constraint firstItem="TYd-fw-Ff3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-12" id="pKF-5b-rpB"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="700" height="400"/>
                     <connections>
+                        <outlet property="currentScoreLabel" destination="M64-3H-Vhy" id="hi4-AU-hNg"/>
                         <outlet property="gameView" destination="LyQ-3T-Ghz" id="KyM-Do-hFK"/>
                         <outlet property="headerView" destination="TYd-fw-Ff3" id="twR-4a-1Sa"/>
+                        <outlet property="livesView" destination="z7K-nx-Ck4" id="hDz-1y-l2t"/>
+                        <outlet property="topScoreLabel" destination="ESF-RA-4wZ" id="uKz-xV-Mwz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
