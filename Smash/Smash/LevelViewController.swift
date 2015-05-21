@@ -210,6 +210,7 @@ class LevelViewController: UIViewController, UICollisionBehaviorDelegate {
                     if let gameOverVC = storyboard?.instantiateViewControllerWithIdentifier("GameOverVC") as? GameOverViewController {
                         navigationController?.viewControllers = [gameOverVC]
                         
+                        GameData.mainData().currentLevel = 0
                         
                         
                     }

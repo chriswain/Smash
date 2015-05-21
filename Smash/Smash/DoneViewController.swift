@@ -44,11 +44,14 @@ class DoneViewController: UIViewController {
 
     @IBAction func quitGame(sender: UIButton) {
      
- //     GameData.mainData().levels.startIndex
+            GameData.mainData().currentLevel = 0
+            GameData.mainData().currentScore = 0
         
         
         if let startVC = storyboard?.instantiateViewControllerWithIdentifier("StartVC") as? StartViewController {
             navigationController?.viewControllers = [startVC]
+            
+            
         }
         
         
