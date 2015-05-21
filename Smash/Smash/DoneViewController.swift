@@ -36,6 +36,11 @@ class DoneViewController: UIViewController {
     }
 
     
+    @IBAction func goToNextLevel(sender: UIButton) {
+        if let levelVC = storyboard?.instantiateViewControllerWithIdentifier("LevelVC") as? LevelViewController {
+            navigationController?.viewControllers = [levelVC]
+        }
+    }
 
     
 }
