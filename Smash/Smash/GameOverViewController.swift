@@ -10,6 +10,15 @@ import UIKit
 
 class GameOverViewController: UIViewController {
 
+  
+    @IBAction func restartGame(sender: UIButton) {
+        if let levelVC = storyboard?.instantiateViewControllerWithIdentifier("LevelVC") as? LevelViewController {
+            navigationController?.viewControllers = [levelVC]
+            
+        }
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

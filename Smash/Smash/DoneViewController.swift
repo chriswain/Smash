@@ -42,5 +42,17 @@ class DoneViewController: UIViewController {
         }
     }
 
+    @IBAction func quitGame(sender: UIButton) {
+     
+ //     GameData.mainData().levels.startIndex
+        
+        
+        if let startVC = storyboard?.instantiateViewControllerWithIdentifier("StartVC") as? StartViewController {
+            navigationController?.viewControllers = [startVC]
+        }
+        
+        
+        
+    }
     
 }

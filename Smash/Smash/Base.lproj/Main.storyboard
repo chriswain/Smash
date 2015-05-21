@@ -91,7 +91,7 @@
         <!--Game Over View Controller-->
         <scene sceneID="N8u-hX-wf9">
             <objects>
-                <viewController id="PJK-bC-cDk" customClass="GameOverViewController" customModule="Smash" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameOverVC" id="PJK-bC-cDk" customClass="GameOverViewController" customModule="Smash" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7EW-6m-IGa"/>
                         <viewControllerLayoutGuide type="bottom" id="5bn-3k-f96"/>
@@ -99,6 +99,24 @@
                     <view key="view" contentMode="scaleToFill" id="GYh-Fa-f6m">
                         <rect key="frame" x="0.0" y="0.0" width="700" height="400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Over You Suck Loserrrrrr" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbg-jo-UdA">
+                                <rect key="frame" x="144" y="70" width="416" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmL-ED-Gd4">
+                                <rect key="frame" x="306" y="250" width="88" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Restart">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="restartGame:" destination="PJK-bC-cDk" eventType="touchUpInside" id="4oa-jC-wvr"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
@@ -112,7 +130,7 @@
         <!--Start View Controller-->
         <scene sceneID="3D3-hx-JFh">
             <objects>
-                <viewController id="TXr-5e-BSe" customClass="StartViewController" customModule="Smash" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartVC" id="TXr-5e-BSe" customClass="StartViewController" customModule="Smash" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vnd-d9-a79"/>
                         <viewControllerLayoutGuide type="bottom" id="D6N-ct-BZY"/>
@@ -182,10 +200,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jT0-dm-pHK">
-                                <rect key="frame" x="435" y="166" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <rect key="frame" x="435" y="166" width="30" height="30"/>
+                                <state key="normal" title="Quit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="quitGame:" destination="60v-8h-C2y" eventType="touchUpInside" id="33T-dr-dfW"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Points" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eD9-Me-Jiu">
                                 <rect key="frame" x="110" y="117" width="210" height="27"/>

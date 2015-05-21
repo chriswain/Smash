@@ -46,4 +46,8 @@ class GameData: NSObject {
         
         return levels[currentLevel]
     }
+    
+    func restartGame() -> [[Int]] {
+        return levels.first!
+    }
 }

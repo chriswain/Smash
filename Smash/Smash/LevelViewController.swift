@@ -176,10 +176,19 @@ class LevelViewController: UIViewController, UICollisionBehaviorDelegate {
                     
                 }
                 
+               
+                
+                
                 
             }
         }
     }
+    
+//    func restartGame() {
+//        if balls.count == 0 {
+//           self.
+//        }
+//    }
     
     func collisionBehavior(behavior: UICollisionBehavior, beganContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying, atPoint p: CGPoint) {
         
@@ -196,13 +205,26 @@ class LevelViewController: UIViewController, UICollisionBehaviorDelegate {
                 livesView.ballsLeft--
                 GameData.mainData().ballsRemain = livesView.ballsLeft
                 createBall()
+                } else {
+                
+                    if let gameOverVC = storyboard?.instantiateViewControllerWithIdentifier("GameOverVC") as? GameOverViewController {
+                        navigationController?.viewControllers = [gameOverVC]
+                        
+                        
+                        
+                    }
+  
                 }
                 
                 
                 
-            }
+            
         }
         
+    }
+
+    
+    
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
